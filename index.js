@@ -137,7 +137,7 @@ function processProduct(num1, num2, cb) {
 */
 function processContains(item, list, cb) {
 
-  return cb(list.includes(item));
+  return cb(list.includes(item)); //includes() array method
 }
 
 /**
@@ -183,9 +183,7 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 */
 function getFullNames(runners) {
   const emptyArr = [];
-  runners.forEach((items) => {
-    return emptyArr.push(`${items.last_name}, ${items.first_name}`);
-  });
+  runners.forEach(items => emptyArr.push(`${items.last_name}, ${items.first_name}`));
   return emptyArr;
 }
 
@@ -202,9 +200,7 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
-  const newArr = runners.map((items)=>{
-    return items.first_name.toUpperCase();
-  })
+  const newArr = runners.map(items => items.first_name.toUpperCase());
   return newArr;
   
 }
@@ -223,7 +219,7 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-  const newArr = runners.filter(item=>item.shirt_size === tShirtSize);
+  const newArr = runners.filter(item => item.shirt_size === tShirtSize);
   return newArr;  
 }
 
@@ -237,8 +233,10 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) { 
+
+  const myVar = runners.reduce((acc, curr) => {return acc += curr.donation;}, 0);
+  return myVar;
 }
 
 /////////////// CLOSURES ///////////////
