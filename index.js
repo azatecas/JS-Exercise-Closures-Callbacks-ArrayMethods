@@ -159,9 +159,13 @@ function processContains(item, list, cb) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
-}
+function processDuplicateFree(arr,cb) {
+  //Set() is an Object that only stores unique data
+  //Set turns data into objects, so you need to convert it back into an Array
+  const myArr = new Set(arr);
+  return cb([...myArr]);
+  } 
+
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
