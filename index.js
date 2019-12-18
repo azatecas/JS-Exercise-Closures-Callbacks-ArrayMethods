@@ -292,7 +292,7 @@ function counterMakerWithLimit(maxCount) {
     return count++;
     } else {
       count = 0;
-      return count;
+      return count++;
     }
   };
 }
